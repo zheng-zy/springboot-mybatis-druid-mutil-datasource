@@ -1,0 +1,18 @@
+server:
+  port: 7000
+  context-path: /
+## master 数据源配置
+master:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/springbootmaster?useUnicode=true&characterEncoding=utf8
+    user: root
+    password: 666666
+    driverClass: com.mysql.jdbc.Driver
+
+## cluster 数据源配置
+cluster:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/springbootcluster?useUnicode=true&characterEncoding=utf8
+    user: root
+    password: 666666
+    driverClass: com.mysql.jdbc.Driver
