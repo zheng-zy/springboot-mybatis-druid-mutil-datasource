@@ -16,7 +16,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 /**
- * <p></p>
+ * <p>master数据源</p>
  * Created by zhezhiyong@163.com on 2017/6/1.
  */
 @Configuration
