@@ -36,6 +36,7 @@ public class MasterDataSourceConfig {
     @Primary
     public DataSource masterDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
+        dataSource.setName("master");
         dataSource.setDriverClassName(driverClass);
         dataSource.setUrl(url);
         dataSource.setUsername(user);
