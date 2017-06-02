@@ -35,10 +35,29 @@ public class ClusterDataSourceConfig {
     @Bean(name = "clusterDataSource")
     public DataSource clusterDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
+        dataSource.setName("cluster");
         dataSource.setDriverClassName(driverClass);
         dataSource.setUrl(url);
         dataSource.setUsername(user);
         dataSource.setPassword(password);
+        // 配置初始化大小、最小、最大
+        dataSource.setInitialSize(0);
+        dataSource.setMinIdle(0);
+        dataSource.setMaxActive(10);
+        // 配置获取连接等待超时的时间
+        dataSource.setMaxWait(15000);
+        // 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        dataSource.setTimeBetweenEvictionRunsMillis(60000);
+        // 配置一个连接在池中最小生存的时间，一个小时
+        dataSource.setMinEvictableIdleTimeMillis(3600000);
+        dataSource.setTestWhileIdle(true);
+        // 这里建议配置为TRUE，防止取到的连接不可用
+        dataSource.setTestOnBorrow(true);
+        dataSource.setTestOnReturn(false);
+        // 这里配置提交方式，默认就是TRUE，可以不用配置
+        dataSource.setDefaultAutoCommit(true);
+        // 验证连接有效与否的SQL，不同的数据配置不同
+        dataSource.setValidationQuery("SELECT 1");
         return dataSource;
     }
 
