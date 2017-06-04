@@ -4,7 +4,7 @@ server:
 ## master 数据源配置
 master:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/springbootmaster?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://192.168.97.120:3306/springbootmaster?useUnicode=true&characterEncoding=utf8&useSSL=false
     user: root
     password: 666666
     driverClass: com.mysql.jdbc.Driver
@@ -12,7 +12,7 @@ master:
 ## cluster 数据源配置
 cluster:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/springbootcluster?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://192.168.97.120:3306/springbootcluster?useUnicode=true&characterEncoding=utf8&useSSL=false
     user: root
     password: 666666
     driverClass: com.mysql.jdbc.Driver
